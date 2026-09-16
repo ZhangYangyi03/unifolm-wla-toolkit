@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.npz
+*.stats.json
+demo/lerobot_meta/
+!demo/real_g1/g1_joints_sample.npz
+!demo/**/episode_*.npz
+demo/er_flow_meta/tokenizer.json
+demo/er_flow_meta/*.safetensors
