@@ -1,0 +1,10 @@
+{
+  "fps": 30,
+  "pose_format": "rpy",
+  "modules": [
+    "left_ee",
+    "left_gripper"
+  ],
+  "chunk_size": 30,
+  "note": "synthetic demo, pose is xyz+rpy in the world/robot base frame"
+}

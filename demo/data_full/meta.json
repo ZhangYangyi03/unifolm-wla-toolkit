@@ -1,0 +1,15 @@
+{
+  "fps": 30,
+  "pose_format": "rpy",
+  "chunk_size": 30,
+  "modules": [
+    "left_ee",
+    "left_gripper",
+    "right_ee",
+    "right_gripper",
+    "waist",
+    "base_vel",
+    "left_leg",
+    "right_leg"
+  ]
+}

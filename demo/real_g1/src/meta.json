@@ -1,0 +1,22 @@
+{
+  "fps": 30.0,
+  "pose_format": "rpy",
+  "chunk_size": 30,
+  "modules": [
+    "left_ee",
+    "left_gripper",
+    "right_ee",
+    "right_gripper"
+  ],
+  "source": "g1_joints_sample.npz",
+  "urdf": "g1.urdf",
+  "assumptions": {
+    "base_pose": "static, rpy=[0.0, 0.0, 0.0]",
+    "base_omega": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hand_slot": "first 6 finger joints of each hand"
+  }
+}
