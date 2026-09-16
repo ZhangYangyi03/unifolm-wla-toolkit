@@ -84,6 +84,11 @@ WLA-Base 没放，但 **ER-Flow 的权重和 tokenizer 是放了的**，它吃�
 `docs/note_to_unitree.md`：实现了什么、怎么验证的（15 项自检）、以及 7 个只能靠猜的
 空白点（含英文摘要）。
 
+已作为 issue 发给官方：https://github.com/unitreerobotics/unifolm-wla/issues/5
+（同仓库 issue #2 是规范文档本身、#4 是 WLA-Base 权重时间线。）
+
+仓库主页：https://github.com/ZhangYangyi03/unifolm-wla-toolkit
+
 ## 真实数据的用法（这条才是重点）
 
 公开的宇树数据集（WLA-1.0 训练用的那批）是 LeRobot v3 格式，**只有关节角**，
