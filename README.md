@@ -150,3 +150,14 @@ ER-1 / ER-Flow 的推理与微调（HF 上已有权重），或者用这份 payl
 - 每段任务单独算统计量再直接拼接 → 规范要求同本体跨任务按等任务权重合并后再用来归一化。
 - 状态里的重力方向不做单位化检查 → |g| 不为 1，模型把姿态误差学成重力噪声。
 - 左右末端统计量合并时没对齐坐标系 → 规范 sec. 13.3 要求先保证坐标系一致。
+
+## Related work by the same author
+
+The same claim -- *a number is meaningless until it is shown to survive its own
+verification* -- is made and measured in other domains:
+
+- [autoforge](https://github.com/ZhangYangyi03/autoforge) -- a tool's fitness, until an oracle outside the tool agrees
+- [agentic-eda](https://github.com/ZhangYangyi03/agentic-eda) -- a circuit's area, until equivalence to the reference netlist is proven
+- [debt-verify](https://github.com/ZhangYangyi03/debt-verify) -- a debt clause decision, until it survives the published revision record
+- [tool-market](https://github.com/ZhangYangyi03/tool-market) -- a tool's liveness, until the hash chain says which revision is live
+- [agent-safety-bench](https://github.com/ZhangYangyi03/agent-safety-bench) -- a model's safety compliance, measured rather than assumed
