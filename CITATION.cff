@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "unifolm-wla-toolkit: robot data into the UnifoLM-WLA unified representation"
+abstract: "Implements Unitree UnifoLM-WLA-1.0's 54-dim action / 60-dim state unified representation and pipeline, with zero-dependency URDF forward kinematics supplying the step missing from the public datasets, and the specification's seven undefined points written up as open questions."
+authors:
+  - family-names: Zhang
+    given-names: Yangyi
+    affiliation: Georgetown University
+repository-code: "https://github.com/ZhangYangyi03/unifolm-wla-toolkit"
+license: Apache-2.0
+type: software
+keywords: [robotics, robot data, unitree, se3, data pipeline]
