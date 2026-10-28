@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    # No GPU, no network, no model download: the one real G1 episode is
+    # committed under demo/real_g1, so the whole chain is repeatable offline.
+    # This runs the same run_all.py a reader runs, which is the point -- a
+    # repo whose only proof is a README sentence has no proof.
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --upgrade pip
+      - run: pip install "numpy>=1.24" "scipy>=1.10"
+      - name: every step in run_all
+        run: python run_all.py
+      - name: the artifacts it wrote are internally consistent
+        run: |
+          python - <<'PY'
+          import json, numpy as np
+          for src in ("demo/data_full", "demo/real_g1/src"):
+              z = np.load(src + "/payload.npz")
+              a, s = z["action"], z["state"]
+              assert a.shape[-1] == 54 and s.shape[-1] == 60, (src, a.shape, s.shape)
+              assert np.isfinite(a).all() and np.isfinite(s).all(), src
+              st = json.load(open(src + "/stats.json"))
+              print(src, "action", a.shape, "state", s.shape, "keys", sorted(st)[:6])
+          print("payloads agree with the 54/60 spec")
+          PY
